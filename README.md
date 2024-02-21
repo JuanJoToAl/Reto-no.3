@@ -37,12 +37,12 @@ flowchart TD;
     D-->E;
     E[arraySize : entero]-->F[x : índice de primos]
     F --> G;
-    G[i = 2]--> H{i<n} -- Sí --> I[Descartar todos los múltiplos de i excepto i]
+    G[i = 2]--> H{i **menor que** n} -- Sí --> I[Descartar todos los múltiplos de i excepto i]
     I-->J;
     J[Escribir ''i es primo'']-->K[Guardar i en primos]
     K-->L;
     L[arraySize += 1]-->M[i += 1]
-    H-- NO -->N{i==n}-- Sí -->O[Para x = 0 Hasta x <= arraySize Con Paso x = x +1]
+    H-- NO -->N{i==n}-- Sí -->O[Para x = 0 Hasta x **menor o igual que** arraySize Con Paso x = x +1]
     N-- No -->H;
     O -->P{n mod primosₓ == 0}-- Sí -->Q[Escribrir ''n no es primo'']
     P-- No -->R[Guardar n en primos]
