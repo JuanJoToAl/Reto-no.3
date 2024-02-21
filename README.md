@@ -29,7 +29,8 @@ Inicio
 Fin
 ```
 ### Diagrama de flujo
-flowchart TD
+```mermaid
+flowchart TD;
     A(Inicio) --> B[n : entero]
     B-->C;
     C[i : entero] -->D[primos : arreglo]
@@ -47,3 +48,4 @@ flowchart TD
     P-- No -->R[Guardar n en primos]
     R-->S;
     S[Escribir n es primo]
+```
