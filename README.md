@@ -2,14 +2,14 @@
 _El siguiente repositorio muestra el pseudo código y diagrama de flujo del algoritmo para para hallar los números primos hasta un número natural n y del algoritmo para obtener raíces cuadradas_
 ## Tabla de contenido
 1. [Algoritmo para hallar los números primos hasta un número natural n](#algoritmo-para-hallar-los-números-primos-hasta-un-número-natural-n)
-	- [Pseudocódigo](#pseudocódigo)
-	- [Diagrama de flujo](#diagrama-de-flujo)
+	- [Pseudocódigo 1](#pseudocódigo-1)
+	- [Diagrama de flujo 1](#diagrama-de-flujo-1)
 2. [Algoritmo para sacar raiz cuadrada a un número n](#algoritmo-para-sacar-raiz-cuadrada-a-un-número-n)
-	- [Pseudocódigo](#pseudocódigo)
-	- [Diagrama de flujo](#diagrama-de-flujo)
+	- [Pseudocódigo 2](#pseudocódigo-2)
+	- [Diagrama de flujo 2](#diagrama-de-flujo-2)
 
 ### Algoritmo para hallar los números primos hasta un número natural n
-#### Pseudocódigo
+#### Pseudocódigo 1
 ```pseudocode
 n : entero
 i : entero
@@ -35,7 +35,7 @@ Inicio
     Fin si
 Fin
 ```
-#### Diagrama de flujo
+#### Diagrama de flujo 1
 ```mermaid
 flowchart TD;
     A(Inicio) --> B[n : entero];
@@ -61,7 +61,7 @@ flowchart TD;
     T(Fin)
 ```
 ### Algoritmo para sacar raiz cuadrada a un número n
-#### Pseudocódigo
+#### Pseudocódigo 2
 ```pseudocode
 n : radicando
 b : raiz
@@ -88,7 +88,7 @@ Inicio
           Fin si
   Fin si           
 ```
-### Diagrama de flujo
+### Diagrama de flujo 2
 ```mermaid
 flowchart TD;
     A(Inicio) --> B[n : radicando];
