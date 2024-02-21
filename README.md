@@ -37,7 +37,7 @@ flowchart TD;
     D-->E;
     E[arraySize : entero]-->F[x : índice de primos]
     F --> G;
-    G[i = 2]--> H{i < n} -- Sí --> I[Descartar todos los múltiplos de i excepto i]
+    G[i = 2]--> H{i<n} -- Sí --> I[Descartar todos los múltiplos de i excepto i]
     I-->J;
     J[Escribir ''i es primo'']-->K[Guardar i en primos]
     K-->L;
