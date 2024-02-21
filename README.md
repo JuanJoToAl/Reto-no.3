@@ -88,7 +88,7 @@ Inicio
           Fin si
   Fin si           
 ```
-### Diagrama de flujo 2
+#### Diagrama de flujo 2
 ```mermaid
 flowchart TD;
     A(Inicio) --> B[n : radicando];
