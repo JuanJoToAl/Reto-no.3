@@ -82,6 +82,7 @@ Inicio
   Fin si           
 ```
 ### Diagrama de flujo
+[![Diagrama de flujo](https://mermaid.ink/img/pako:eNqFU8FuGjEQ_ZWRLyQQLjkS0aqEQEgCSVhONVTyrofE0a5NvF5VBHFvP6NSpJz6A71UKn-SL-l48aI0Vdq97FvPmzfzZscrlhiJrMXmqfmc3ArrYNI9mmqg58PeQKtEmX1oNt9Bh2togRVSJUJLMwukDsWOAz7mcUlRD7MypcthTAeJ0XeFdgYkgt78yNCaHCyKFPNKpUv0k4BP-Me3klA7_5558R63vhjmShYGtlxKglzdFMoTc5CUkqi5FXmpUhXrlc31w1d_FX86hHYb9LrZhGjzvYyecswTq2JloVaL6zGQnDdWCtVqlVSfUkamzBjwCBfCCgua-nxVW6JFmi4IUA_31J6VopIYUPJZwGe8U-QJSRS6Mg0xOD8puC8QfCM5CsB0F84236gQWvophuQ1PH95Au_o-esjWfadnfMx5q5srOklqsrnFLwI-IIPi9SpRap8-bh-WGYOeUfc0ff_Zzok-ijg0WutxrK-_MPF9uTfTuzWSeB6N9b3dMmjIvOy0IBlVf2SAlcBX1VuLbmt-Z9XKhDy6derXz__CoAjc1jt0vu1t14twphXLbRhN7nxi8lde1bYgWi3NSQPjeUbWxMRdxLw6Qs82espvX_EDhgNJBNK0r1c-dCUuVvMcMpaBCXOBc13yqZ6TVRROBMtdcJazhZ4wIqFFA67StxYkbHWXKQ5naJUztjh9q6XV379G66oQDQ?type=png)](https://mermaid.live/edit#pako:eNqFU8FuGjEQ_ZWRLyQQLjkS0aqEQEgCSVhONVTyrofE0a5NvF5VBHFvP6NSpJz6A71UKn-SL-l48aI0Vdq97FvPmzfzZscrlhiJrMXmqfmc3ArrYNI9mmqg58PeQKtEmX1oNt9Bh2togRVSJUJLMwukDsWOAz7mcUlRD7MypcthTAeJ0XeFdgYkgt78yNCaHCyKFPNKpUv0k4BP-Me3klA7_5558R63vhjmShYGtlxKglzdFMoTc5CUkqi5FXmpUhXrlc31w1d_FX86hHYb9LrZhGjzvYyecswTq2JloVaL6zGQnDdWCtVqlVSfUkamzBjwCBfCCgua-nxVW6JFmi4IUA_31J6VopIYUPJZwGe8U-QJSRS6Mg0xOD8puC8QfCM5CsB0F84236gQWvophuQ1PH95Au_o-esjWfadnfMx5q5srOklqsrnFLwI-IIPi9SpRap8-bh-WGYOeUfc0ff_Zzok-ijg0WutxrK-_MPF9uTfTuzWSeB6N9b3dMmjIvOy0IBlVf2SAlcBX1VuLbmt-Z9XKhDy6derXz__CoAjc1jt0vu1t14twphXLbRhN7nxi8lde1bYgWi3NSQPjeUbWxMRdxLw6Qs82espvX_EDhgNJBNK0r1c-dCUuVvMcMpaBCXOBc13yqZ6TVRROBMtdcJazhZ4wIqFFA67StxYkbHWXKQ5naJUztjh9q6XV379G66oQDQ)
 ```mermaid
 flowchart TD;
     A(Inicio) --> B[n : radicando];
@@ -99,11 +100,11 @@ flowchart TD;
     M-->N;
     N[Multiplicar b*2+y*y tales que b*2+y*y sea el número más cercano a r ∧ b*2+y*y ≤ r]-->O[Sumar b + y];
     O-->P;
-    P[Restar r - '''b*2+y*y''']-->Q{¿r - '''b*2+y*y''' tiene residuo?}--> Sí --> R[b*2+y*y = b];
-    R-->L;
-    Q--> No --> S[escribir''b +y es raiz de n''];
-    S-->T;
+    P[Restar r - '''b*2+y*y''']-->Q{¿r - '''b*2+y*y''' tiene residuo?}--> Sí --> S[b*2+y*y = b];
+    Q-->L;
+    S--> No --> T[escribir''b +y es raiz de n''];
+    T-->T;
     H-->T;
-    T(Fin);
+    I(Fin);
 ```
 
