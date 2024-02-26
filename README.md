@@ -52,7 +52,7 @@ flowchart TD;
     M-->H;
     H-- NO -->N[i==n];
     N -->O[Para x = 0 Hasta x **menor o igual que** arraySize Con Paso x = x +1];
-    O -->P{n mod primosₓ == 0}-- Sí -->Q[Escribrir ''n no es primo''];
+    O -->P{n mod primosₓ == 0}-- Sí -->Q[Escribrir n, ''no es primo''];
     P-- No -->R[Guardar n en primos];
     R-->S;
     S[Escribir ''n es primo''];
@@ -65,25 +65,41 @@ flowchart TD;
 ```pseudocode
 n : radicando
 b : raiz
-r : residuo de n - b^2 junto con siguientes dos cifras de n
+c : primeras dos cifras de n
+r : residuo de dos cifras de n - b^2 junto con siguientes dos cifras de n
+y : 1
 
 Inicio
   Si b^2 == n Entonces
-  	escribir (''b^2 es raiz de n'')
+  	escribir (b^2, ''es raiz de'', n)
   Sino
-  	Separar n en dos cifras de derecha a izquierda
-  	Buscar un número b tales que b^2 sea el número más cercano a n ∧ b^2 ≤ n
-  	Restar n - b^2
-  	Multiplicar b*2
-  	Bajar siguientes dos cifras de n
-  	Multiplicar (b*2)y*y tales que (b*2)y*y sea el número más cercano a r ∧ (b*2)y*y ≤ r
-  	Restar r - (b*2)y*y
-	Sumar b + y
-          Si r - (b*2)y*y tiene residuo Entonces
-            (b*2)y*y = b*2
-          Sino b + y es Entonces
-            escribir(''b + y es raiz de n)
-          Fin si
+  	separar n en dos cifras de derecha a izquierda
+  	buscar un número b tales que b^2 sea el número más cercano a c ∧ b^2 ≤ c
+  	restar c - b^2
+  	multiplicar b*2
+  	bajar siguientes dos cifras de n
+		Si en las siguientes dos cifras de n una de ellas es decimal Entonces
+			poner punto decimal a la derecha de b
+		Sino
+			dejar a b como está
+  	Multiplicar (b*2)y*y
+	Mientras (b*2)y*y no sea el número más cercano a r ∧ (b*2)y*y ≤ r Entonces
+		y +=1 siempre y cuando y < 10
+	Fin Mientras
+	Si (b*2)y*y es el número más cercano a r ∧ (b*2)y*y ≤ r Entonces
+		restar r - (b*2)y*y
+	Fin Si
+	Si b tiene un punto decimal Entonces
+		sumar b + 0.y
+	Sino
+		sumar b + y
+	Mientras r - (b*2)y*y tenga residuo Hacer
+		(b*2)y*y = b
+		repetir desde (Multiplicar b*2)
+	Fin mientras
+	Si r - (b*2)y*y no tiene residuo Entonces
+            escribir(b + y, ''es raiz de'' n)
+	Fin si
   Fin si           
 ```
 #### Diagrama de flujo 2
@@ -110,5 +126,33 @@ flowchart TD;
     T-->V;
     H-->V;
     V(Fin);
+```
+```mermaid
+flowchart TD;
+    A(Inicio) --> B[n : radicando];
+    B-->C;
+    C[b : raiz] --> D[ c : primeras dos cifras de n];
+    D-->E;
+    E[r : residuo de dos cifras de n - b^2 junto con siguientes dos cifras de n]--> F[y : 1];
+    F --> G;
+    G{b^2 == n}-- Sí --> H[Escribir b^2, ''es raiz de'', n];
+    G-- No --> I[Separar n en dos cifras de derecha a izquierda];
+    I-->J;
+    J[Buscar un número b tales que b^2 sea el número más cercano a c y b^2 sea menor o igual a c]-->K[Restar c - b^2]
+    K-->L;
+    L[Multiplicar b*2]--> M[Bajar siguientes dos cifras de n];
+    M-->N;
+    N{En las siguientes dos cifras de n una de ellas es decimal}-- Sí -->O[poner punto decimal a la derecha de b];
+    N-- No --> P[Dejar a b como está];
+    O-->R;
+    P-->R;
+    R[Multiplicar b*2+y*y]--> S{b*2y*y no es el número más cercano a r y b*2y*y es menor o igual a r}-- Sí -->T[y +=1 siempre y cuando y < 10];
+    S-- No-->U[Restar r - b*2*y*y]
+    T--> S;
+    U-->V{b tiene un punto decimal}--Sí -->W[Sumar b + 0.y];
+    U--No-->X[Sumar b + y];
+    X-->Y{r - b*2y*y tiene residuo}--Sí -->Z[b*2y*y = b];
+    Z-->AA[repetir desde ''Multiplicar b*2''];
+    Y--No -->AB[escribir b + y, ''es raiz de'', n]
 ```
 
