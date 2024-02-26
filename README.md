@@ -154,5 +154,6 @@ flowchart TD;
     X-->Y{r - b*2y*y tiene residuo}--Sí -->Z[b*2y*y = b];
     Z-->L;
     Y--No -->AB[escribir b + y, ''es raiz de'', n]
+    AB-->AC[Fin]
 ```
 
