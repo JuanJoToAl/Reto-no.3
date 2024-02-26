@@ -66,7 +66,7 @@ flowchart TD;
 n : radicando
 b : raiz
 c : primeras dos cifras de n
-r : residuo de dos cifras de n - b^2 junto con siguientes dos cifras de n
+r : residuo de las dos cifras de n - b^2 junto con siguientes dos cifras de n
 y : 1
 
 Inicio
@@ -133,7 +133,7 @@ flowchart TD;
     B-->C;
     C[b : raiz] --> D[ c : primeras dos cifras de n];
     D-->E;
-    E[r : residuo de dos cifras de n - b^2 junto con siguientes dos cifras de n]--> F[y : 1];
+    E[r : residuo de las dos cifras de n - b^2 junto con siguientes dos cifras de n]--> F[y : 1];
     F --> G;
     G{b^2 == n}-- Sí --> H[Escribir b^2, ''es raiz de'', n];
     G-- No --> I[Separar n en dos cifras de derecha a izquierda];
@@ -146,11 +146,11 @@ flowchart TD;
     N-- No --> P[Dejar a b como está];
     O-->R;
     P-->R;
-    R[Multiplicar b*2+y*y]--> S{b*2y*y no es el número más cercano a r y b*2y*y es menor o igual a r}-- Sí -->T[y +=1 siempre y cuando y < 10];
+    R[Multiplicar b*2+y*y]--> S{b*2y*y no es el número más cercano a r y b*2y*y es menor o igual a r}-- Sí -->T[y +=1 siempre y cuando y menor a 10];
     S-- No-->U[Restar r - b*2*y*y]
     T--> S;
     U-->V{b tiene un punto decimal}--Sí -->W[Sumar b + 0.y];
-    U--No-->X[Sumar b + y];
+    V--No-->X[Sumar b + y];
     X-->Y{r - b*2y*y tiene residuo}--Sí -->Z[b*2y*y = b];
     Z-->AA[repetir desde ''Multiplicar b*2''];
     Y--No -->AB[escribir b + y, ''es raiz de'', n]
