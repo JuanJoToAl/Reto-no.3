@@ -107,30 +107,6 @@ Inicio
 flowchart TD;
     A(Inicio) --> B[n : radicando];
     B-->C;
-    C[b : raiz] --> D[ R : conjunto de números reales];
-    D-->E;
-    E[Z : conjunto de números enteros]--> F[r : residuo junto con siguientes dos cifras de n];
-    F --> G;
-    G{b^2 == n}-- Sí --> H[Escribir ''b^2 es raiz de n''];
-    G-- No --> I[Separar n en dos cifras de derecha a izquierda];
-    I-->J;
-    J[Buscar un número b tales que b^2 sea el número más cercano a n y b^2 sea menor o igual a n]--> K[Restar n - b^2];
-    K-->L;
-    L[Multiplicar b*2]--> M[Bajar siguientes dos cifras de n];
-    M-->N;
-    N[Multiplicar b*2+y*y tales que b*2+y*y sea el número más cercano a r y b*2+y*y sea menor o igual a r]-->O[Sumar b + y];
-    O-->P;
-    P[Restar r - b*2+y*y]-->Q{r - b*2+y*y tiene residuo}--> Sí --> S[b*2+y*y = b];
-    Q--> No --> T[Escribir''b +y es raiz de n''];
-    S-->L
-    T-->V;
-    H-->V;
-    V(Fin);
-```
-```mermaid
-flowchart TD;
-    A(Inicio) --> B[n : radicando];
-    B-->C;
     C[b : raiz] --> D[ c : primeras dos cifras de n];
     D-->E;
     E[r : residuo de las dos cifras de n - b^2 junto con siguientes dos cifras de n]--> F[y : 1];
