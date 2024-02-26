@@ -65,9 +65,7 @@ flowchart TD;
 ```pseudocode
 n : radicando
 b : raiz
-ℝ : conjunto de números reales
-Z : conjunto de números enteros
-r : residuo junto con siguientes dos cifras de n
+r : residuo de n - b^2 junto con siguientes dos cifras de n
 
 Inicio
   Si b^2 == n Entonces
@@ -84,7 +82,7 @@ Inicio
           Si r - (b*2)y*y tiene residuo Entonces
             (b*2)y*y = b*2
           Sino b + y es Entonces
-            escribir(''b +y es raiz de n)
+            escribir(''b + y es raiz de n)
           Fin si
   Fin si           
 ```
