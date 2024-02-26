@@ -152,7 +152,7 @@ flowchart TD;
     U-->V{b tiene un punto decimal}--Sí -->W[Sumar b + 0.y];
     V--No-->X[Sumar b + y];
     X-->Y{r - b*2y*y tiene residuo}--Sí -->Z[b*2y*y = b];
-    Z-->AA[repetir desde ''Multiplicar b*2''];
+    Z-->L;
     Y--No -->AB[escribir b + y, ''es raiz de'', n]
 ```
 
